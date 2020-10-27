@@ -22,7 +22,7 @@
 				}
 			],
 			"transformations": [],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: true,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: 'testcontainer',\n\tfolderPath: 'onedir',\n\tfileName: 'world_data.csv',\n\tsheetName: '',\n\tfirstRowAsHeader: true) ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\ttruncate: true,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: true,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: 'testcontainer',\n\tfolderPath: 'onedir',\n\tfileName: 'world_data.csv',\n\tsheetName: 'world_data',\n\tfirstRowAsHeader: true) ~> source1\nsource1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\ttruncate: true,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
